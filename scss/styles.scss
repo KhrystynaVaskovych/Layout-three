@@ -1,0 +1,429 @@
+@import '_variables.scss';
+
+@font-face {
+    font-family: 'Exo-Thin';
+    src: url("../fonts/Exo-Thin.ttf");
+}
+
+@font-face {
+    font-family: 'Exo-SemiBold';
+    src: url("../fonts/Exo-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: 'Exo-Regular';
+    src: url("../fonts/Exo-Regular.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Exo-Regular';
+    word-spacing: 2px;
+}
+
+html {
+    font-size: 16px;
+}
+
+.subheading {
+    @include font-styling($size: 0.8rem, $letter-spacing: 3px, $color: $coral-color);
+}
+
+.title {
+    @include font-styling($size: 2rem, $letter-spacing: 2px);
+}
+
+.text {
+    font-size: 0.8rem;
+}
+
+.red-colored {
+    font-family: $semibold-font;
+    color: $coral-color;
+}
+
+.link {
+    color: $base-color;
+}
+
+.footer-style {
+    color: $grey-color;
+}
+
+.no-underline {
+    @include font-styling($size: 0.7rem, $color: $grey-color, $decoration: none);
+}
+
+.container {
+    max-width: 80vw;
+    margin: 0 auto;
+}
+
+.heading {
+    background: url("../img/background_mountains.png") $backgroung-position;
+    height: 100vh;
+    width: 100%;
+
+    .container {
+        @include flex-description($direction: column, $align: center);
+        @include positioning($top: 45%, $left: 50%);
+        width: 700px;
+        height: 500px;
+        transform: translate(-50%, -50%);
+    }
+
+    &-title {
+        @include font-styling($size: 3.2rem, $letter-spacing: 3px, $align: center, $family: $thin-font);
+        margin-top: 120px;
+    }
+
+    &-player {
+        @include button-style;
+        margin-top: 35px;
+        border-radius: 50%;
+        height: 54px;
+    }
+
+    &-button {
+        @include font-styling($size: 1rem, $color: $base-color, $letter-spacing: 3px, $family: $thin-font);
+        width: 170px;
+        height: 45px;
+        margin-top: 25px;
+        background-color: $coral-color;
+        border-radius: 5px;
+        text-transform: uppercase;
+    }
+
+    &-text {
+        margin-top: 12px;
+        text-align: center;
+    }
+}
+
+.new-design {
+    height: 645px;
+    position: relative;
+
+    &-bg-grey,
+    &-bg-pink {
+        @include positioning($bottom: 0px, $right: 0px)
+    }
+
+    .container {
+        @include flex-description($align: center);
+        height: 100%;
+
+        .new-design-block {
+            z-index: 100;
+            width: 50%;
+
+            &-title {
+                margin: 5px 0 37px;
+            }
+
+            &-text {
+                margin-top: 7px;
+                line-height: 22px;
+            }
+        }
+    }
+}
+
+.some-features {
+    @include flex-description($direction: column, $justify: center);
+    height: 600px;
+    background-color: $bg-color;
+    overflow: hidden;
+    position: relative;
+
+    &-holder {
+        @include positioning($top: 0px, $left: 3%);
+        width: 27%;
+    }
+
+    &-earphones {
+        @include positioning($top: 0, $left: 80%);
+        width: 16%;
+    }
+
+    &-coffee {
+        @include positioning($top: 90%, $left: 75%);
+        width: 16%;
+    }
+
+    .container {
+        .some-features-content {
+            @include flex-description($direction: column, $align: center);
+            width: 80vw;
+            height: 400px;
+
+            &-subheading {
+                margin-top: 20px;
+            }
+
+            &-paragraph {
+                @include flex-description($justify: space-around);
+                margin-top: 67px;
+
+                &-item {
+                    @include flex-description($direction: column, $align: center);
+                    @include font-styling($size: 1rem, $align: center, $line-height: 1.5);
+                    width: 32%;
+
+                    &-image {
+                        margin-bottom: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.design-responsive {
+    overflow: hidden;
+    height: 490px;
+    position: relative;
+
+    &-triangle {
+        @include positioning($top: -45px, $left: -635px);
+        z-index: -1;
+    }
+
+    &-macbook {
+        @include positioning($top: 50%, $left: 3%);
+        display: block;
+        max-width: 45%;
+        height: auto;
+        transform: translateY(-50%);
+    }
+
+    .container {
+        .design-responsive-content {
+            margin: 13% 0 0 auto;
+            width: 49%;
+            height: 400px;
+
+            &-subheading {
+                margin-top: 20px;
+            }
+
+            &-title {
+                margin: 5px 0 37px;
+                width: 96%;
+            }
+
+            &-paragraph {
+                line-height: 1.5;
+            }
+        }
+    }
+}
+
+.comments {
+    height: 575px;
+    background: url("../img/background-grey.png") $backgroung-position;
+    background-color: $black-color;
+
+    .container {
+        @include flex-description($direction: column, $justify: center);
+        padding-top: 50px;
+        height: 100%;
+
+        .comments-block {
+            @include flex-description($justify: space-around, $align: center);
+
+            &-item {
+                @include flex-description($direction: column, $align: center);
+                width: 30%;
+
+                &-name {
+                    @include font-styling($align: center, $color: $base-color);
+                    margin: 15px;
+                }
+
+                &-description {
+                    @include font-styling($align: center, $line-height: 1.5rem, $color: $base-color, $style: italic);
+                    margin-top: 10px;
+                }
+            }
+        }
+
+        .logo-block {
+            @include flex-description($justify: space-between);
+            margin: 8% auto 0;
+            width: 80%;
+            height: 60px;
+
+            &-item {
+                height: auto;
+                filter: contrast(0);
+            }
+        }
+    }
+}
+
+.new-features {
+    height: 670px;
+
+    .container {
+        position: relative;
+        width: 90vw;
+        height: 100%;
+    }
+
+    &-block {
+
+        &-subheading {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        &-title {
+            margin: 5px 0 37px;
+            @include font-styling($letter-spacing: 2px, $align: center);
+        }
+
+        &-text {
+            @include font-styling($size: 0.9rem, $line-height: 22px, $align: center);
+            margin-top: 7px;
+        }
+
+        &-image {
+            @include positioning($left: 50%, $bottom: 0);
+            width: 90%;
+            transform: translateX(-50%)
+        }
+    }
+}
+
+.registration-form {
+    background-color: $dark-blue-color;
+    height: 415px;
+    text-align: center;
+
+    .container {
+        @include flex-description($justify: center, $align: center);
+        height: 100%;
+    }
+
+    .input {
+        @include input-style;
+        background-color: $grey-blue-color;
+        padding-left: 3%;
+
+        &::placeholder {
+            @include font-styling($color: $base-color, $size: 0.8rem);
+        }
+    }
+
+    &-block {
+        position: relative;
+        width: 100%;
+
+        &-title {
+            color: $base-color;
+            margin-bottom: 70px;
+        }
+
+        &-form {
+            @include flex-description($justify: space-between);
+            margin: 20px 0;
+
+            &-wrap {
+                position: relative;
+                width: 22%;
+                height: 45px;
+
+                &-button {
+                    @include input-style;
+                    width: 100%;
+                    background-color: $coral-color;
+                    border: none;
+                }
+
+                &-arrow {
+                    @include positioning($top: -46px, $left: -7px);
+                }
+
+                &-pop {
+                    @include positioning($top: -60px, $left: 10px);
+                    color: $base-color;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &-inscription {
+        @include font-styling($size: 0.9rem, $color: $base-color);
+        margin-top: 50px;
+    }
+}
+
+.footer {
+    @include flex-description($align: center);
+    background: linear-gradient(40deg, #ffffff 320px, $gradient-color 0) 100% 100%/500px 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    position: relative;
+
+    &-block {
+        @include flex-description($wrap: wrap);
+        padding: 40px 0;
+
+        &-column {
+            line-height: 2;
+            width: 200px;
+            padding: 10px 20px;
+
+            &:first-child {
+                margin-top: 2px;
+                width: 250px;
+                font-size: 0.7rem;
+            }
+
+            &:last-child {
+                width: 250px;
+                position: relative;
+            }
+
+            &-input-container {
+                @include flex-description;
+
+                &-button {
+                    @include button-style;
+                    width: 50px;
+                    height: 50px;
+                    background: url('../img/paper-plane.png') top;
+                    -webkit-appearance: none;
+                    border-radius: 4px;
+                }
+
+                &-email {
+                    width: 70%;
+                    height: 50px;
+                    border-radius: 4px;
+                }
+            }
+
+            &-item {
+                list-style-type: none;
+                line-height: 1.7;
+            }
+
+            &-media {
+                @include flex-description($justify: space-around);
+                margin-top: 8%;
+                height: 13%;
+
+                &-item {
+                    filter: contrast(0);
+                }
+            }
+        }
+    }
+}
+
+@import 'media-920', 'media-678', 'media-466';

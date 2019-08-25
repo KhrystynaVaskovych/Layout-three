@@ -1,0 +1,95 @@
+@media (max-width: 466px) {
+
+    html {
+        font-size: 11px;
+    }
+
+    .heading{
+        .container{
+            .heading-title{
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .design-responsive {
+        height: 400px;
+
+        &-triangle {
+            left: -100px;
+        }
+
+        .container {
+            .design-responsive {
+                &-content {
+                    @include flex-description($direction: column, $justify: center); 
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+        }
+
+        &-macbook {
+            display: none;
+        }
+    }
+
+    .registration-form {
+        height: 500px;
+
+        &-block {
+            &-form {
+                flex-wrap: wrap;
+
+                .input {
+                    width: 100%;
+                    margin: 5px 0;
+                }
+
+                &-wrap {
+                    width: 100%;
+                    margin-top: 50px;
+
+                    &-pop {
+                        width: 50%;
+                        top: -40px;
+                        text-align: left;
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .new-features {
+        height: 400px;
+    }
+
+    .comments{
+        .container{
+            .logo-block{
+                height: 30px;
+            }
+        }
+    }
+
+    .footer {
+        &-block {
+            @include flex-description($justify: center);
+
+            &-column {
+
+                width: 60%;
+
+                &:first-child,
+                &:last-child {
+                    width: 70%;
+                }
+
+                &:nth-child(2) {
+                    padding-left: 0px;
+                }
+            }
+        }
+    }
+}
